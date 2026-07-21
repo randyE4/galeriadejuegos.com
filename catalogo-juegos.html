@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Juegos</title>
+<style>
+  :root{
+    --bg: #0d0f14;
+    --bg-card: #161a22;
+    --line: #262c38;
+    --accent: #7ef9c4;
+    --accent-dim: #3f8f6f;
+    --text: #e7ebf0;
+    --text-dim: #8a93a3;
+    --font-display: 'Courier New', monospace;
+    --font-body: 'Segoe UI', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 20% -10%, #1b2230 0%, transparent 50%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 40px 20px 80px;
+  }
+
+  header{
+    max-width: 900px;
+    margin: 0 auto 50px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 24px;
+  }
+
+  header .eyebrow{
+    font-family: var(--font-display);
+    color: var(--accent);
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  header h1{
+    font-family: var(--font-display);
+    font-size: 40px;
+    margin: 8px 0 6px;
+    letter-spacing: 1px;
+  }
+
+  header p{
+    color: var(--text-dim);
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* ====== CATÁLOGO: 2 COLUMNAS ====== */
+  .catalogo{
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 620px){
+    .catalogo{ grid-template-columns: 1fr; }
+  }
+
+  .juego{
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+
+  .juego:hover{
+    border-color: var(--accent-dim);
+    transform: translateY(-3px);
+  }
+
+  .juego img{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--line);
+    background: #0a0c10;
+  }
+
+  .juego .info{
+    padding: 16px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .juego h2{
+    font-family: var(--font-display);
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: .5px;
+  }
+
+  .juego .descarga{
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #0d0f14;
+    background: var(--accent);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: opacity .15s ease;
+  }
+
+  .juego .descarga:hover{
+    opacity: .85;
+  }
+
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="eyebrow">colección de juegos</div>
+    <h1>Catálogo de Juegos</h1>
+    <p>Descarga directa, sin vueltas.</p>
+  </header>
+
+  <!--
+    ============================================
+    CÓMO AÑADIR UN JUEGO NUEVO:
+    Copia un bloque <div class="juego">...</div> completo,
+    pégalo antes de </div> del final del catálogo y cambia:
+      - src de la imagen
+      - el nombre del juego (texto dentro de <h2>)
+      - el href del botón de descarga
+    ============================================
+  -->
+  <div class="catalogo">
+
+    <!--juego 1 -->
+    <div class="juego">
+      <img src="supersmashbros.jpeg" alt="Portada de Juego de Ejemplo 1">
+      <div class="info">
+        <h2>super smash bros 3ds</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1Ch1heDXrMLLwIrX81LV_KLrzoXi85Oyi/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+
+    <!--juego 2 -->
+    <div class="juego">
+      <img src="sonic.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>sonic generations</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/15JQ4-pP58DqTkv4h7aquApP4DgcDhXs9/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+
+    <!--juego 4 -->
+<div class="juego">
+      <img src="marioparty.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Mario Party</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1-LxVoAErqobOFgSQCqRUKJ6DcT1wAq9R/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+    <!--juego 5 -->
+<div class="juego">
+      <img src="marioyluigi.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Mario & Luigi superstar saga</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1GOdppePPecACx6AgZrIIqj4WYGtRM9Bn/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+    <!--juego 6 -->
+<div class="juego">
+      <img src="mariokart7.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>mario kart 7</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1G4P51H-M2mHHbrcljJsG4AtmqGNcay9i/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+    <!--juego 7 -->
+<div class="juego">
+      <img src="pokemonluna.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Pokemon Luna</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/15gqX8vRkYEhxSPo_8sLwa3VyzTa8p4RW/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+    <!--juego 8 -->
+<div class="juego">
+      <img src="pokemonsool.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Pokemon Sol</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1XZxfBu2lT85KYi9feC169EghtUPLmtMe/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+    <!--juego 9 -->
+<div class="juego">
+      <img src="pokemonmegarubi.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Pokemon omega rubi</h2>
+        <a class="descarga" href="https://ejemplo.com/descargar-juego2" download>Descargar</a>
+      </div>
+    </div>
+    <!--juego 10 -->
+<div class="juego">
+      <img src="pokemonx.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>pokemon x </h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1PjVzYM726VsGbc2aYX0oeFxQ_fuwAgAb/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+    <div class="juego">
+      <img src="zelda majoras mass.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Zelda: Majora's Mask</h2>
+        <a class="descarga" href="" download>Descargar</a>
+      </div>
+    </div><div class="juego">
+      <img src="zelda ocarina of time.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Zelda: Ocarina of Time</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1gmxnX8xBSx7phyPsxuUkBI6gwLsA3oKD/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div><div class="juego">
+      <img src="animakcrosin.jpeg" alt="Portada de Juego de Ejemplo 2">
+      <div class="info">
+        <h2>Animal Crossing New Leaf</h2>
+        <a class="descarga" href="https://drive.google.com/file/d/1-sbuCaNKX_ne4QxO9k_YrRfKtlldfMNk/view?usp=sharing" download>Descargar</a>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
